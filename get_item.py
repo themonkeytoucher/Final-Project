@@ -53,12 +53,22 @@ Input: Item ID
 Output: A dictionary of the item's day to day price points on a graph
 Example:
 {
-	 '1527897600000': 181,
-	 '1527984000000': 180,
-	 '1528070400000': 180,
-	 '1528156800000': 182,
-	 ...
- }
+	'daily':{
+		'1527897600000': 181,
+		'1527984000000': 180,
+		'1528070400000': 180,
+		'1528156800000': 182,
+		...
+	}
+	'average':{
+		'1527897600000': 186, 
+		'1527984000000': 186, 
+		'1528070400000': 186, 
+		'1528156800000': 186, 
+		'1528243200000': 186,
+		...
+	}
+}
 """
 def get_graph(item_id):
 	url = "http://services.runescape.com/m=itemdb_oldschool/api/graph/%d.json" %item_id
@@ -68,4 +78,4 @@ def get_graph(item_id):
 
 if __name__ == "__main__":
 	catalogue = get_graph(2)
-	print(catalogue['daily'])
+	print(catalogue['average'])
