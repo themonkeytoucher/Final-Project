@@ -77,5 +77,6 @@ def get_graph(item_id):
 	    return data
 
 if __name__ == "__main__":
-	catalogue = get_graph(2)
-	print(catalogue['average'])
+	catalogue = catalogue(2)
+	print(catalogue['daily'])
+print(catalogue['average'])
